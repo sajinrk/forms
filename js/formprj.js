@@ -1,7 +1,10 @@
 	/*
 	*Javascript File
+	* Project Name
+	* Description
+	*@author Sajin R
 	*/
-	var submitMessage = "Your form is submitted"
+	
 
 	/*
 	*
@@ -53,6 +56,7 @@
 	
 	/**********Helper Functions*********************************************/
 
+	var submitMessage = "Your form is submitted"
 	
 	function showPopup(message){
 		console.log("popup " + message);
