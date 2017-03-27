@@ -1,0 +1,18 @@
+
+
+
+.formStyle{
+	width: 500px;
+	height : 500px;
+	border: #000 solid 1px 
+}
+
+.popup{
+	width: 250px;
+	height : 100px;
+	border: #000 solid 1px 
+}
+
+.popup.btnPopupOK{
+	text-align: right;
+}
