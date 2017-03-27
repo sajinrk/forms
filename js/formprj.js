@@ -45,24 +45,33 @@
 		showPopup(submitMessage);
 	}
 
-	/*******************************************************/
-
-	
-	function showPopup(message){
-		console.log("popup " + message);
-		document.getElementById("forms").innerHTML = getPopupHTML(message);
-	}
-
-	var popupHTML = "<div id=\"popup\" class=\"popup\"><input type=\"button\" class=\"btnPopupOK\" value=\"OK\" onclick=\"popupOK()\">##message##</div>";
-	function getPopupHTML(message){
-		var html = popupHTML;
-		return html.replace('##message##', message);
-	}
-
 	function popupOK(){
 		var elem = document.getElementById("popup");
 		elem.parentNode.removeChild(elem);
 	}
+
+	
+	/**********Helper Functions*********************************************/
+
+	
+	function showPopup(message){
+		console.log("popup " + message);
+		document.getElementById("forms").appendChild(getPopup(message));
+	}	
+
+	
+	var popupInnerHTML = "<input type=\"button\" class=\"btnPopupOK\" value=\"OK\" onclick=\"popupOK()\">##message##";
+	function getPopup(message){
+		var html = popupInnerHTML;
+		html = html.replace("##message##", message);
+		var popup = document.createElement('div');
+		popup.id="popup";
+		popup.className ="popup"
+		popup.innerHTML = html;
+		return popup;
+	}
+
+	
 
 	function renderForms(formName){
 
